@@ -1,0 +1,43 @@
+{
+    "name": "diskerror/p_lib",
+    "description": "My often reused PHP code.",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "reid",
+            "email": "reid@rawsound.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Diskerror\\Library\\": "src/"
+        },
+        "files": [
+            "src/escapeshellarg.php",
+            "src/var_export.php",
+            "src/Json.php",
+            "src/StdIo.php",
+            "src/Xml2Array.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "suggest": {
+        "ext-curl": "Required by Curl.php",
+        "ext-dom": "Required by DomDocParser.php",
+        "ext-simplexml": "Required by Xml2Array.php (function_exists('process'))",
+        "ext-sqlite3": "Required by SQLite3.php",
+        "ext-shmop": "Required by Shmem.php, ShmemMaster.php, SharedTimer.php, SharedTimerMaster.php",
+        "ext-posix": "Improves StdIo\\colorize() TTY detection; degrades gracefully if absent"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Diskerror\\Library\\Tests\\": "tests/"
+        }
+    }
+}
