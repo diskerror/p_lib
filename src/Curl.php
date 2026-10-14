@@ -21,7 +21,12 @@ class Curl
 	public function __destruct()
 	{
 		if (isset($this->_curl)) {
-			curl_close($this->_curl);
+			// PHP 7.4: the handle is a resource and must be closed. 
+			// PHP >= 8.0: it is a CurlHandle object freed by unset();
+			// curl_close() is a no-op there and deprecated since 8.5.
+			if (PHP_VERSION_ID < 80000) {
+				curl_close($this->_curl);
+			}
 			unset($this->_curl);
 		}
 	}
