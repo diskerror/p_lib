@@ -3,3 +3,4 @@
 /.phpunit.cache/
 /backup/
 .idea/
+.DS_Store
