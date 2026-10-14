@@ -2,7 +2,7 @@
     "name": "diskerror/p_lib",
     "description": "My often reused PHP code.",
     "minimum-stability": "stable",
-    "license": "proprietary",
+    "license": "0BSD",
     "authors": [
         {
             "name": "reid",
